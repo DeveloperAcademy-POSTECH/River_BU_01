@@ -58,11 +58,6 @@ struct EnglishWordListView: View {
       await awaitloadData()
     }
   }
- 
-  enum fetchError : Error{
-    case InvalidURL
-    case InvalidData
-  }
   
   func awaitloadData() async{
     do{
@@ -73,6 +68,12 @@ struct EnglishWordListView: View {
       print(error)
     }
   }
+  
+  
+   enum fetchError : Error{
+     case InvalidURL
+     case InvalidData
+   }
   
   func loadData() async throws{
     // 1) creare the url that I want to read
@@ -91,6 +92,8 @@ struct EnglishWordListView: View {
       // JSONDecoder: JSON -> 실사용 instance(codable 해야 함)
       if let decodedResponse = try? JSONDecoder().decode([String].self, from : data){
         words = decodedResponse
+      }else{
+        throw fetchError.InvalidData
       }
     }catch{
       throw fetchError.InvalidData
