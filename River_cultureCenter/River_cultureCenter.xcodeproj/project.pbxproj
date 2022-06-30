@@ -13,7 +13,7 @@
 		CCDF1454283E5C130001BDCF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCDF1453283E5C130001BDCF /* Preview Assets.xcassets */; };
 		CCDF145B283E5C260001BDCF /* SelectingWordsCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF145A283E5C260001BDCF /* SelectingWordsCountView.swift */; };
 		CCDF145D283E67C60001BDCF /* EnglishWordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF145C283E67C60001BDCF /* EnglishWordListView.swift */; };
-		CCDF146A283E6B2C0001BDCF /* CountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF1469283E6B2C0001BDCF /* CountModel.swift */; };
+		CCDF146A283E6B2C0001BDCF /* CountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF1469283E6B2C0001BDCF /* CountViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +24,7 @@
 		CCDF1453283E5C130001BDCF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CCDF145A283E5C260001BDCF /* SelectingWordsCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectingWordsCountView.swift; sourceTree = "<group>"; };
 		CCDF145C283E67C60001BDCF /* EnglishWordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishWordListView.swift; sourceTree = "<group>"; };
-		CCDF1469283E6B2C0001BDCF /* CountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountModel.swift; sourceTree = "<group>"; };
+		CCDF1469283E6B2C0001BDCF /* CountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 				CCDF144E283E5C120001BDCF /* ContentView.swift */,
 				CCDF145A283E5C260001BDCF /* SelectingWordsCountView.swift */,
 				CCDF145C283E67C60001BDCF /* EnglishWordListView.swift */,
-				CCDF1469283E6B2C0001BDCF /* CountModel.swift */,
+				CCDF1469283E6B2C0001BDCF /* CountViewModel.swift */,
 				CCDF1450283E5C130001BDCF /* Assets.xcassets */,
 				CCDF1452283E5C130001BDCF /* Preview Content */,
 			);
@@ -147,7 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCDF144F283E5C120001BDCF /* ContentView.swift in Sources */,
-				CCDF146A283E6B2C0001BDCF /* CountModel.swift in Sources */,
+				CCDF146A283E6B2C0001BDCF /* CountViewModel.swift in Sources */,
 				CCDF145D283E67C60001BDCF /* EnglishWordListView.swift in Sources */,
 				CCDF144D283E5C120001BDCF /* River_cultureCenterApp.swift in Sources */,
 				CCDF145B283E5C260001BDCF /* SelectingWordsCountView.swift in Sources */,
