@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ActivityIndicatorView
 
 struct Words : Decodable{
     let words : [String]
@@ -19,7 +20,9 @@ struct EnglishWordListView: View {
     var body: some View {
         VStack{
             if isloading {
-                Text("loading..")
+                ActivityIndicatorView(isVisible: $isloading, type: .scalingDots())
+                    .frame(width: 50, height: 50)
+                    .foregroundColor(.red)
                 Spacer()
             }else{
                 VStack{

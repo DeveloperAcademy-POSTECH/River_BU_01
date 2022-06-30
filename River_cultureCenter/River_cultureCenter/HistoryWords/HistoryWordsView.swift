@@ -9,12 +9,12 @@ import SwiftUI
 
 struct HistoryWordsView: View {
     let listIndex: Int
-    let wordList: [String]
+    @Binding var wordList: [String]
     var body: some View {
         VStack{
             List{
                 ForEach(0..<wordList.count, id: \.self) { index in
-                    Text("\(wordList[index])")
+                    TextField("word", text: $wordList[index])
                 }
             }
             .listStyle(.plain)
@@ -25,6 +25,6 @@ struct HistoryWordsView: View {
 
 struct HistoryWordsView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryWordsView(listIndex: 1, wordList: ["hi","river"])
+        HistoryWordsView(listIndex: 1, wordList: .constant(["hi","river"]))
     }
 }

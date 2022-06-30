@@ -13,6 +13,7 @@
 		CCBB3395286DB3A9001CF50C /* AlertCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB3394286DB3A9001CF50C /* AlertCountView.swift */; };
 		CCBB3397286DB3D8001CF50C /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB3396286DB3D8001CF50C /* HistoryViewModel.swift */; };
 		CCBB3399286DB9F2001CF50C /* HistoryWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB3398286DB9F2001CF50C /* HistoryWordsView.swift */; };
+		CCBB339C286DC89A001CF50C /* ActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = CCBB339B286DC89A001CF50C /* ActivityIndicatorView */; };
 		CCDF144D283E5C120001BDCF /* River_cultureCenterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF144C283E5C120001BDCF /* River_cultureCenterApp.swift */; };
 		CCDF144F283E5C120001BDCF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF144E283E5C120001BDCF /* ContentView.swift */; };
 		CCDF1451283E5C130001BDCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCDF1450283E5C130001BDCF /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCBB339C286DC89A001CF50C /* ActivityIndicatorView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +128,9 @@
 			dependencies = (
 			);
 			name = River_cultureCenter;
+			packageProductDependencies = (
+				CCBB339B286DC89A001CF50C /* ActivityIndicatorView */,
+			);
 			productName = River_cultureCenter;
 			productReference = CCDF1449283E5C120001BDCF /* River_cultureCenter.app */;
 			productType = "com.apple.product-type.application";
@@ -154,6 +159,9 @@
 				Base,
 			);
 			mainGroup = CCDF1440283E5C120001BDCF;
+			packageReferences = (
+				CCBB339A286DC89A001CF50C /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */,
+			);
 			productRefGroup = CCDF144A283E5C120001BDCF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -391,6 +399,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CCBB339A286DC89A001CF50C /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/ActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CCBB339B286DC89A001CF50C /* ActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CCBB339A286DC89A001CF50C /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */;
+			productName = ActivityIndicatorView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CCDF1441283E5C120001BDCF /* Project object */;
 }
