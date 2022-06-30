@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CCBB338D286DAC46001CF50C /* HistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB338C286DAC46001CF50C /* HistoryListView.swift */; };
+		CCBB338F286DAC6A001CF50C /* SearchWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB338E286DAC6A001CF50C /* SearchWordsView.swift */; };
+		CCBB3393286DB39C001CF50C /* CountButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB3392286DB39C001CF50C /* CountButtonView.swift */; };
+		CCBB3395286DB3A9001CF50C /* AlertCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB3394286DB3A9001CF50C /* AlertCountView.swift */; };
+		CCBB3397286DB3D8001CF50C /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB3396286DB3D8001CF50C /* HistoryViewModel.swift */; };
+		CCBB3399286DB9F2001CF50C /* HistoryWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB3398286DB9F2001CF50C /* HistoryWordsView.swift */; };
 		CCDF144D283E5C120001BDCF /* River_cultureCenterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF144C283E5C120001BDCF /* River_cultureCenterApp.swift */; };
 		CCDF144F283E5C120001BDCF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF144E283E5C120001BDCF /* ContentView.swift */; };
 		CCDF1451283E5C130001BDCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCDF1450283E5C130001BDCF /* Assets.xcassets */; };
@@ -17,6 +23,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CCBB338C286DAC46001CF50C /* HistoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListView.swift; sourceTree = "<group>"; };
+		CCBB338E286DAC6A001CF50C /* SearchWordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsView.swift; sourceTree = "<group>"; };
+		CCBB3392286DB39C001CF50C /* CountButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountButtonView.swift; sourceTree = "<group>"; };
+		CCBB3394286DB3A9001CF50C /* AlertCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCountView.swift; sourceTree = "<group>"; };
+		CCBB3396286DB3D8001CF50C /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		CCBB3398286DB9F2001CF50C /* HistoryWordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWordsView.swift; sourceTree = "<group>"; };
 		CCDF1449283E5C120001BDCF /* River_cultureCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = River_cultureCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCDF144C283E5C120001BDCF /* River_cultureCenterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = River_cultureCenterApp.swift; sourceTree = "<group>"; };
 		CCDF144E283E5C120001BDCF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +50,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CCBB3390286DB36A001CF50C /* SearchWords */ = {
+			isa = PBXGroup;
+			children = (
+				CCDF145C283E67C60001BDCF /* EnglishWordListView.swift */,
+				CCDF145A283E5C260001BDCF /* SelectingWordsCountView.swift */,
+				CCBB3394286DB3A9001CF50C /* AlertCountView.swift */,
+				CCBB3392286DB39C001CF50C /* CountButtonView.swift */,
+				CCBB338E286DAC6A001CF50C /* SearchWordsView.swift */,
+				CCDF1469283E6B2C0001BDCF /* CountViewModel.swift */,
+			);
+			path = SearchWords;
+			sourceTree = "<group>";
+		};
+		CCBB3391286DB374001CF50C /* HistoryWords */ = {
+			isa = PBXGroup;
+			children = (
+				CCBB338C286DAC46001CF50C /* HistoryListView.swift */,
+				CCBB3398286DB9F2001CF50C /* HistoryWordsView.swift */,
+				CCBB3396286DB3D8001CF50C /* HistoryViewModel.swift */,
+			);
+			path = HistoryWords;
+			sourceTree = "<group>";
+		};
 		CCDF1440283E5C120001BDCF = {
 			isa = PBXGroup;
 			children = (
@@ -59,9 +94,8 @@
 			children = (
 				CCDF144C283E5C120001BDCF /* River_cultureCenterApp.swift */,
 				CCDF144E283E5C120001BDCF /* ContentView.swift */,
-				CCDF145A283E5C260001BDCF /* SelectingWordsCountView.swift */,
-				CCDF145C283E67C60001BDCF /* EnglishWordListView.swift */,
-				CCDF1469283E6B2C0001BDCF /* CountViewModel.swift */,
+				CCBB3391286DB374001CF50C /* HistoryWords */,
+				CCBB3390286DB36A001CF50C /* SearchWords */,
 				CCDF1450283E5C130001BDCF /* Assets.xcassets */,
 				CCDF1452283E5C130001BDCF /* Preview Content */,
 			);
@@ -146,11 +180,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCBB3399286DB9F2001CF50C /* HistoryWordsView.swift in Sources */,
+				CCBB3393286DB39C001CF50C /* CountButtonView.swift in Sources */,
 				CCDF144F283E5C120001BDCF /* ContentView.swift in Sources */,
 				CCDF146A283E6B2C0001BDCF /* CountViewModel.swift in Sources */,
+				CCBB338D286DAC46001CF50C /* HistoryListView.swift in Sources */,
+				CCBB3395286DB3A9001CF50C /* AlertCountView.swift in Sources */,
+				CCBB3397286DB3D8001CF50C /* HistoryViewModel.swift in Sources */,
 				CCDF145D283E67C60001BDCF /* EnglishWordListView.swift in Sources */,
 				CCDF144D283E5C120001BDCF /* River_cultureCenterApp.swift in Sources */,
 				CCDF145B283E5C260001BDCF /* SelectingWordsCountView.swift in Sources */,
+				CCBB338F286DAC6A001CF50C /* SearchWordsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

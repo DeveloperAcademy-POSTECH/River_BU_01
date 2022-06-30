@@ -7,12 +7,13 @@
 
 import SwiftUI
 
+@MainActor
 class CountViewModel : ObservableObject {
     @Published var countedWord: Int
     @Published var words: [String]
     
     init(){
-        countedWord = 0
+        countedWord = 1
         words = []
     }
     
@@ -34,6 +35,14 @@ class CountViewModel : ObservableObject {
             return true
         } else {
             return false
+        }
+    }
+    
+    func awaitloadData() async{
+        do{
+            try await self.loadData()
+        }catch{
+            print(error)
         }
     }
     
