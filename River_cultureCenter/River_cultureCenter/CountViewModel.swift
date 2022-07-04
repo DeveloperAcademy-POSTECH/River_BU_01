@@ -11,6 +11,16 @@ class CountViewModel : ObservableObject {
     @Published var countedWord: Int
     @Published var words: [String]
     
+    enum CountValidation { // ViewModel 내부에 선언된 eunum
+      case valid
+      case over
+      case under
+    }
+    
+    var isCountValid: CountValidation {
+      return self.countedWord > 15 ? .over : self.countedWord < 1 ? .under : .valid
+    }
+    
     init(){
         countedWord = 0
         words = []
@@ -21,6 +31,7 @@ class CountViewModel : ObservableObject {
         case InvalidData
     }
     
+<<<<<<< Updated upstream:River_cultureCenter/River_cultureCenter/CountViewModel.swift
     func isNumberBiggerThan1() -> Bool {
         if self.countedWord > 1 {
             return true
@@ -38,6 +49,9 @@ class CountViewModel : ObservableObject {
     }
     
     func loadData() async throws {
+=======
+    func loadWordsAPI() async throws {
+>>>>>>> Stashed changes:River_cultureCenter/River_cultureCenter/SearchWords/CountViewModel.swift
         // 1) creare the url that I want to read
         guard let url  = URL(string: "https://random-word-api.herokuapp.com/word?number=\(self.countedWord)")
         else{
@@ -63,11 +77,11 @@ class CountViewModel : ObservableObject {
     }
     
     func upCountedWord(){
-        self.countedWord += 1
+            self.countedWord += 1
     }
     
     func downCountedWord(){
-        self.countedWord -= 1
+            self.countedWord -= 1
     }
 }
 
