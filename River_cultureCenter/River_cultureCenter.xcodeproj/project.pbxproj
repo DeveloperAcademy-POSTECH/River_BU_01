@@ -9,10 +9,9 @@
 /* Begin PBXBuildFile section */
 		CCBB338D286DAC46001CF50C /* HistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB338C286DAC46001CF50C /* HistoryListView.swift */; };
 		CCBB338F286DAC6A001CF50C /* SearchWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB338E286DAC6A001CF50C /* SearchWordsView.swift */; };
-		CCBB3393286DB39C001CF50C /* CountButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB3392286DB39C001CF50C /* CountButtonView.swift */; };
-		CCBB3395286DB3A9001CF50C /* AlertCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB3394286DB3A9001CF50C /* AlertCountView.swift */; };
 		CCBB3397286DB3D8001CF50C /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB3396286DB3D8001CF50C /* HistoryViewModel.swift */; };
 		CCBB3399286DB9F2001CF50C /* HistoryWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB3398286DB9F2001CF50C /* HistoryWordsView.swift */; };
+		CCBB33A32872EBB0001CF50C /* ActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = CCBB33A22872EBB0001CF50C /* ActivityIndicatorView */; };
 		CCDF144D283E5C120001BDCF /* River_cultureCenterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF144C283E5C120001BDCF /* River_cultureCenterApp.swift */; };
 		CCDF144F283E5C120001BDCF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF144E283E5C120001BDCF /* ContentView.swift */; };
 		CCDF1451283E5C130001BDCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCDF1450283E5C130001BDCF /* Assets.xcassets */; };
@@ -25,8 +24,6 @@
 /* Begin PBXFileReference section */
 		CCBB338C286DAC46001CF50C /* HistoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListView.swift; sourceTree = "<group>"; };
 		CCBB338E286DAC6A001CF50C /* SearchWordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsView.swift; sourceTree = "<group>"; };
-		CCBB3392286DB39C001CF50C /* CountButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountButtonView.swift; sourceTree = "<group>"; };
-		CCBB3394286DB3A9001CF50C /* AlertCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCountView.swift; sourceTree = "<group>"; };
 		CCBB3396286DB3D8001CF50C /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		CCBB3398286DB9F2001CF50C /* HistoryWordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWordsView.swift; sourceTree = "<group>"; };
 		CCDF1449283E5C120001BDCF /* River_cultureCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = River_cultureCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCBB33A32872EBB0001CF50C /* ActivityIndicatorView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,8 +53,6 @@
 			children = (
 				CCDF145C283E67C60001BDCF /* EnglishWordListView.swift */,
 				CCDF145A283E5C260001BDCF /* SelectingWordsCountView.swift */,
-				CCBB3394286DB3A9001CF50C /* AlertCountView.swift */,
-				CCBB3392286DB39C001CF50C /* CountButtonView.swift */,
 				CCBB338E286DAC6A001CF50C /* SearchWordsView.swift */,
 				CCDF1469283E6B2C0001BDCF /* CountViewModel.swift */,
 			);
@@ -126,6 +122,9 @@
 			dependencies = (
 			);
 			name = River_cultureCenter;
+			packageProductDependencies = (
+				CCBB33A22872EBB0001CF50C /* ActivityIndicatorView */,
+			);
 			productName = River_cultureCenter;
 			productReference = CCDF1449283E5C120001BDCF /* River_cultureCenter.app */;
 			productType = "com.apple.product-type.application";
@@ -154,6 +153,9 @@
 				Base,
 			);
 			mainGroup = CCDF1440283E5C120001BDCF;
+			packageReferences = (
+				CCBB33A12872EBB0001CF50C /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */,
+			);
 			productRefGroup = CCDF144A283E5C120001BDCF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -180,12 +182,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCDF144F283E5C120001BDCF /* ContentView.swift in Sources */,
+				CCDF146A283E6B2C0001BDCF /* CountViewModel.swift in Sources */,
 				CCBB3399286DB9F2001CF50C /* HistoryWordsView.swift in Sources */,
-				CCBB3393286DB39C001CF50C /* CountButtonView.swift in Sources */,
 				CCDF144F283E5C120001BDCF /* ContentView.swift in Sources */,
 				CCDF146A283E6B2C0001BDCF /* CountViewModel.swift in Sources */,
 				CCBB338D286DAC46001CF50C /* HistoryListView.swift in Sources */,
-				CCBB3395286DB3A9001CF50C /* AlertCountView.swift in Sources */,
 				CCBB3397286DB3D8001CF50C /* HistoryViewModel.swift in Sources */,
 				CCDF145D283E67C60001BDCF /* EnglishWordListView.swift in Sources */,
 				CCDF144D283E5C120001BDCF /* River_cultureCenterApp.swift in Sources */,
@@ -391,6 +393,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CCBB33A12872EBB0001CF50C /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/ActivityIndicatorView.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CCBB33A22872EBB0001CF50C /* ActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CCBB33A12872EBB0001CF50C /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */;
+			productName = ActivityIndicatorView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CCDF1441283E5C120001BDCF /* Project object */;
 }

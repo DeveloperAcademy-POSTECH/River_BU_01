@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "activityindicatorview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/exyte/ActivityIndicatorView.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "0fb57e69b6130b4beb8ba49eaafe13563f2f6bd6"
+      }
+    }
+  ],
+  "version" : 2
+}

@@ -6,44 +6,28 @@
 //
 
 import SwiftUI
+import ActivityIndicatorView
 
 struct SearchWordsView: View {
     @StateObject var countViewModel = CountViewModel()
     @State var isShowWordsList = false
-    @EnvironmentObject var historyViewModel: HistoryViewModel
+    @State var isloading = false
     
     var body: some View {
         NavigationView{
             VStack{
-                SelectingWordsCountView(viewModel: countViewModel)
-                Button(action: {
-                    Task {
-                            await awaitloadData()
-                        }
-                }) {
-                    Capsule(style: .circular)
-                        .fill(
-                            Color(UIColor.systemGray5)
-                        )
-                        .frame(width: 110, height: 50)
-                        .overlay(
-                            Text("영단어 찾기")
-                                .foregroundColor(.black)
-                        )
+                if isloading {
+                    ActivityIndicatorView(isVisible: $isloading, type: .scalingDots())
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(.blue)
+                } else {
+                    SelectingWordsCountView(viewModel: countViewModel)
+                    SearchButtonView(countViewModel: countViewModel, isloading: $isloading, isShowWordsList: $isShowWordsList)
                 }
                 NavigationLink("", destination: EnglishWordListView(viewModel: countViewModel), isActive: $isShowWordsList)
             }
+            .navigationTitle("Search Words")
         }
-    }
-    
-    func awaitloadData() async{
-        do{
-            try await countViewModel.loadData()
-            isShowWordsList = true
-        }catch{
-            print(error)
-        }
-        historyViewModel.wordList.append(countViewModel.words)
     }
 }
 
