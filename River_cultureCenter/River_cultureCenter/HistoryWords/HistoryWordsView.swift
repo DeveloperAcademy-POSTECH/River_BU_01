@@ -13,7 +13,7 @@ struct HistoryWordsView: View {
     @State var copiedWordList: [String] = []
     @EnvironmentObject var historyViewModel: HistoryViewModel
     @State var isAlert = false
-    
+
     var body: some View {
         VStack{
             HStack{
@@ -54,6 +54,6 @@ struct HistoryWordsView: View {
 
 struct HistoryWordsView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryWordsView(listIndex: 1, wordList: ["hi","river"])
+        HistoryWordsView(listIndex: 1, wordList: .constant(["hi","river"]))
     }
 }
