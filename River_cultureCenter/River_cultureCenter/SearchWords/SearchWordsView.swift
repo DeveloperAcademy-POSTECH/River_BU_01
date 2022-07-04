@@ -11,8 +11,7 @@ import ActivityIndicatorView
 struct SearchWordsView: View {
     @StateObject var countViewModel = CountViewModel()
     @State var isShowWordsList = false
-    @EnvironmentObject var historyViewModel: HistoryViewModel
-    @State private var isloading = false
+    @State var isloading = false
     
     var body: some View {
         NavigationView{
@@ -20,41 +19,15 @@ struct SearchWordsView: View {
                 if isloading {
                     ActivityIndicatorView(isVisible: $isloading, type: .scalingDots())
                         .frame(width: 50, height: 50)
-                        .foregroundColor(.red)
+                        .foregroundColor(.blue)
                 } else {
                     SelectingWordsCountView(viewModel: countViewModel)
-                    Button(action: {
-                        Task {
-                                await awaitloadData()
-                            }
-                    }) {
-                        Capsule(style: .circular)
-                            .fill(
-                                Color(UIColor.systemGray5)
-                            )
-                            .frame(width: 110, height: 50)
-                            .overlay(
-                                Text("영단어 찾기")
-                                    .foregroundColor(.black)
-                            )
-                    }
-                    .padding(.top, 20)
+                    SearchButtonView(countViewModel: countViewModel, isloading: $isloading, isShowWordsList: $isShowWordsList)
                 }
                 NavigationLink("", destination: EnglishWordListView(viewModel: countViewModel), isActive: $isShowWordsList)
             }
+            .navigationTitle("Search Words")
         }
-    }
-    
-    func awaitloadData() async{
-        do{
-            isloading = true
-            try await countViewModel.loadData()
-            isloading = false
-            isShowWordsList = true
-        }catch{
-            print(error)
-        }
-        historyViewModel.wordList.append(countViewModel.words)
     }
 }
 

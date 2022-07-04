@@ -16,12 +16,14 @@ struct HistoryListView: View {
             NavigationView{
                 List{
                     ForEach(0..<historyViewModel.wordList.count, id: \.self) { index in
+                        let wordList = historyViewModel.wordList[index]
                         NavigationLink("List \(index+1) : \(historyViewModel.wordList[index].count)개의 단어",
-                                       destination: HistoryWordsView(listIndex: index, wordList: $historyViewModel.wordList[index])
+                                       destination: HistoryWordsView(listIndex: index, wordList: wordList)
                         )
                     }
                 }
                 .listStyle(.plain)
+                .navigationTitle("Words History")
             }
         }
     }

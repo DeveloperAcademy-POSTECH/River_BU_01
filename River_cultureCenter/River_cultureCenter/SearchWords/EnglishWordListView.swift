@@ -14,55 +14,81 @@ struct Words : Decodable{
 
 struct EnglishWordListView: View {
     @ObservedObject var viewModel: CountViewModel
-    @State private var isloading = false
+    @State var isloading = false
     @EnvironmentObject var historyViewModel: HistoryViewModel
     
     var body: some View {
         VStack{
             if isloading {
-                ActivityIndicatorView(isVisible: $isloading, type: .scalingDots())
-                    .frame(width: 50, height: 50)
-                    .foregroundColor(.red)
-                Spacer()
+                loadingView()
             }else{
-                VStack{
-                    SelectingWordsCountView(viewModel: viewModel)
-                    Button(action: {
-                        Task{
-                            await awaitloadData()
-                        }
-                    }){
-                        Capsule(style: .circular)
-                            .fill(
-                                Color(UIColor.systemGray5)
-                            )
-                            .frame(width: 110, height: 50)
-                            .overlay(
-                                Text("영단어 찾기")
-                                    .foregroundColor(.black)
-                            )
-                    }
-                }
-                .padding(.bottom, 30)
-                List(viewModel.words, id : \.self){ word in
-                    Text(word)
-                }
-                .listStyle(.plain)
+                searchWordsAgainView()
             }
         }
         .padding(.top, 30)
         .navigationTitle("단어 list (\(viewModel.countedWord)개)")
     }
+    @ViewBuilder
+        func loadingView() -> some View   {
+            ActivityIndicatorView(isVisible: $isloading, type: .scalingDots())
+                .frame(width: 50, height: 50)
+                .foregroundColor(.blue)
+            Spacer()
+        }
     
-    func awaitloadData() async{
-        do{
+    @ViewBuilder
+    func searchWordsAgainView() -> some View {
+            VStack{
+                SelectingWordsCountView(viewModel: viewModel)
+                SearchButtonView(countViewModel: viewModel, isloading: $isloading)
+            }
+            .padding(.bottom, 30)
+            List(viewModel.words, id : \.self){ word in
+                Text(word)
+            }
+            .listStyle(.plain)
+    }
+}
+
+struct SearchButtonView: View {
+    @ObservedObject var countviewModel: CountViewModel
+    @Binding var isloading: Bool
+    @Binding var isShowWordsList: Bool
+    @EnvironmentObject var historyViewModel: HistoryViewModel
+    
+    init(countViewModel: CountViewModel, isloading: Binding<Bool>, isShowWordsList: Binding<Bool> = .constant(false)){
+        self.countviewModel = countViewModel
+        self._isloading = isloading
+        self._isShowWordsList = isShowWordsList
+    }
+    
+    var body: some View {
+        Button {
+            Task {
+                await self.loadData()
+            }
+        } label: {
+            Text("단어 검색")
+                .padding(.horizontal, 10)
+                .padding(.vertical, 5)
+                .background(
+                    Capsule()
+                        .foregroundColor(Color.gray.opacity(0.4))
+                )
+        }
+
+    }
+    
+    func loadData() async {
+        do {
             isloading = true
-            try await viewModel.loadData()
+            try await countviewModel.loadWordsAPI()
             isloading = false
-        }catch{
+            isShowWordsList = true
+        } catch {
             print(error)
         }
-        historyViewModel.wordList.append(viewModel.words)
+        historyViewModel.appendWordsList(words: countviewModel.words)
     }
 }
 

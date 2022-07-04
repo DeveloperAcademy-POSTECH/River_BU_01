@@ -12,4 +12,10 @@ class HistoryViewModel: ObservableObject {
     init(){
         self.wordList = []
     }
+    func appendWordsList(words: [String]){
+        self.wordList.append(words)
+    }
+    func fixWords(index: Int, words: [String]){
+        self.wordList[index] = words
+    }
 }
