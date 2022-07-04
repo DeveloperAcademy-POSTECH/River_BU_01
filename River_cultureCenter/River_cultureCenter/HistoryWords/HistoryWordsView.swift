@@ -17,7 +17,7 @@ struct HistoryWordsView: View {
     var body: some View {
         VStack{
             HStack{
-                Text("변경이 완료되었습니다!")
+                Text("수정이 완료되었습니다!")
                     .foregroundColor(isAlert ? .blue : .white)
                 Spacer()
                 Button {

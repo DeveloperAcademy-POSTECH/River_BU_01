@@ -9,7 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        SelectingWordsCountView()
+        TabView {
+            SearchWordsView()
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                    Text("search words")
+                }
+            HistoryListView()
+                .tabItem {
+                    Image(systemName: "books.vertical")
+                    Text("history words")
+                }
+        }
+        .environmentObject(HistoryViewModel())
     }
 }
 

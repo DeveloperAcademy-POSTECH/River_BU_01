@@ -14,7 +14,7 @@ struct Words : Decodable{
 
 struct EnglishWordListView: View {
     @ObservedObject var viewModel: CountViewModel
-    @State private var isloading = false
+    @State var isloading = false
     @EnvironmentObject var historyViewModel: HistoryViewModel
     
     var body: some View {
@@ -28,7 +28,6 @@ struct EnglishWordListView: View {
         .padding(.top, 30)
         .navigationTitle("단어 list (\(viewModel.countedWord)개)")
     }
-    
     @ViewBuilder
         func loadingView() -> some View   {
             ActivityIndicatorView(isVisible: $isloading, type: .scalingDots())
@@ -48,6 +47,48 @@ struct EnglishWordListView: View {
                 Text(word)
             }
             .listStyle(.plain)
+    }
+}
+
+struct SearchButtonView: View {
+    @ObservedObject var countviewModel: CountViewModel
+    @Binding var isloading: Bool
+    @Binding var isShowWordsList: Bool
+    @EnvironmentObject var historyViewModel: HistoryViewModel
+    
+    init(countViewModel: CountViewModel, isloading: Binding<Bool>, isShowWordsList: Binding<Bool> = .constant(false)){
+        self.countviewModel = countViewModel
+        self._isloading = isloading
+        self._isShowWordsList = isShowWordsList
+    }
+    
+    var body: some View {
+        Button {
+            Task {
+                await self.loadData()
+            }
+        } label: {
+            Text("단어 검색")
+                .padding(.horizontal, 10)
+                .padding(.vertical, 5)
+                .background(
+                    Capsule()
+                        .foregroundColor(Color.gray.opacity(0.4))
+                )
+        }
+
+    }
+    
+    func loadData() async {
+        do {
+            isloading = true
+            try await countviewModel.loadWordsAPI()
+            isloading = false
+            isShowWordsList = true
+        } catch {
+            print(error)
+        }
+        historyViewModel.appendWordsList(words: countviewModel.words)
     }
 }
 

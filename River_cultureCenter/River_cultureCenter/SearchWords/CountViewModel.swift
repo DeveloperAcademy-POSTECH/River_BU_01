@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@MainActor
 class CountViewModel : ObservableObject {
     @Published var countedWord: Int
     @Published var words: [String]
@@ -22,7 +23,7 @@ class CountViewModel : ObservableObject {
     }
     
     init(){
-        countedWord = 0
+        countedWord = 1
         words = []
     }
     
@@ -31,27 +32,7 @@ class CountViewModel : ObservableObject {
         case InvalidData
     }
     
-<<<<<<< Updated upstream:River_cultureCenter/River_cultureCenter/CountViewModel.swift
-    func isNumberBiggerThan1() -> Bool {
-        if self.countedWord > 1 {
-            return true
-        } else {
-            return false
-        }
-    }
-    
-    func isNumberSmallerThan15() -> Bool {
-        if self.countedWord < 15 {
-            return true
-        } else {
-            return false
-        }
-    }
-    
-    func loadData() async throws {
-=======
     func loadWordsAPI() async throws {
->>>>>>> Stashed changes:River_cultureCenter/River_cultureCenter/SearchWords/CountViewModel.swift
         // 1) creare the url that I want to read
         guard let url  = URL(string: "https://random-word-api.herokuapp.com/word?number=\(self.countedWord)")
         else{
