@@ -33,7 +33,7 @@ struct HistoryWordsView: View {
                         .foregroundColor(.black)
                         .background(
                             Capsule()
-                                .foregroundColor(Color(UIColor.systemGray5))
+                                .foregroundColor(Color.blue.opacity(0.2))
                         )
                 }
             }
@@ -54,6 +54,6 @@ struct HistoryWordsView: View {
 
 struct HistoryWordsView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryWordsView(listIndex: 1, wordList: .constant(["hi","river"]))
+        HistoryWordsView(listIndex: 1, wordList: ["hi","river"])
     }
 }

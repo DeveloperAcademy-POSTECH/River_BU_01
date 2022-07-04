@@ -12,6 +12,7 @@
 		CCBB3397286DB3D8001CF50C /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB3396286DB3D8001CF50C /* HistoryViewModel.swift */; };
 		CCBB3399286DB9F2001CF50C /* HistoryWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB3398286DB9F2001CF50C /* HistoryWordsView.swift */; };
 		CCBB33A32872EBB0001CF50C /* ActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = CCBB33A22872EBB0001CF50C /* ActivityIndicatorView */; };
+		CCBB33A52872EF6A001CF50C /* SearchButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB33A42872EF6A001CF50C /* SearchButtonView.swift */; };
 		CCDF144D283E5C120001BDCF /* River_cultureCenterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF144C283E5C120001BDCF /* River_cultureCenterApp.swift */; };
 		CCDF144F283E5C120001BDCF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF144E283E5C120001BDCF /* ContentView.swift */; };
 		CCDF1451283E5C130001BDCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCDF1450283E5C130001BDCF /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		CCBB338E286DAC6A001CF50C /* SearchWordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordsView.swift; sourceTree = "<group>"; };
 		CCBB3396286DB3D8001CF50C /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		CCBB3398286DB9F2001CF50C /* HistoryWordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWordsView.swift; sourceTree = "<group>"; };
+		CCBB33A42872EF6A001CF50C /* SearchButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButtonView.swift; sourceTree = "<group>"; };
 		CCDF1449283E5C120001BDCF /* River_cultureCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = River_cultureCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCDF144C283E5C120001BDCF /* River_cultureCenterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = River_cultureCenterApp.swift; sourceTree = "<group>"; };
 		CCDF144E283E5C120001BDCF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 				CCDF145A283E5C260001BDCF /* SelectingWordsCountView.swift */,
 				CCBB338E286DAC6A001CF50C /* SearchWordsView.swift */,
 				CCDF1469283E6B2C0001BDCF /* CountViewModel.swift */,
+				CCBB33A42872EF6A001CF50C /* SearchButtonView.swift */,
 			);
 			path = SearchWords;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			files = (
 				CCDF144F283E5C120001BDCF /* ContentView.swift in Sources */,
 				CCDF146A283E6B2C0001BDCF /* CountViewModel.swift in Sources */,
+				CCBB33A52872EF6A001CF50C /* SearchButtonView.swift in Sources */,
 				CCBB3399286DB9F2001CF50C /* HistoryWordsView.swift in Sources */,
 				CCDF144F283E5C120001BDCF /* ContentView.swift in Sources */,
 				CCDF146A283E6B2C0001BDCF /* CountViewModel.swift in Sources */,

@@ -50,48 +50,6 @@ struct EnglishWordListView: View {
     }
 }
 
-struct SearchButtonView: View {
-    @ObservedObject var countviewModel: CountViewModel
-    @Binding var isloading: Bool
-    @Binding var isShowWordsList: Bool
-    @EnvironmentObject var historyViewModel: HistoryViewModel
-    
-    init(countViewModel: CountViewModel, isloading: Binding<Bool>, isShowWordsList: Binding<Bool> = .constant(false)){
-        self.countviewModel = countViewModel
-        self._isloading = isloading
-        self._isShowWordsList = isShowWordsList
-    }
-    
-    var body: some View {
-        Button {
-            Task {
-                await self.loadData()
-            }
-        } label: {
-            Text("단어 검색")
-                .padding(.horizontal, 10)
-                .padding(.vertical, 5)
-                .background(
-                    Capsule()
-                        .foregroundColor(Color.gray.opacity(0.4))
-                )
-        }
-
-    }
-    
-    func loadData() async {
-        do {
-            isloading = true
-            try await countviewModel.loadWordsAPI()
-            isloading = false
-            isShowWordsList = true
-        } catch {
-            print(error)
-        }
-        historyViewModel.appendWordsList(words: countviewModel.words)
-    }
-}
-
 struct EnglishWordListView_Previews: PreviewProvider {
     static var previews: some View {
         EnglishWordListView(viewModel : CountViewModel())
